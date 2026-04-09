@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "login#index"
 
+  get "/login", to:"login#index"
   post "/login", to:"login#create"
   delete "/logout", to:"login#destroy"
 
-  get "/home", to: "home#index"
+  get "/home", to:"home#index"
 end

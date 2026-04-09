@@ -8,3 +8,154 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+:root {
+    --style-spacing-1: 0.5em;
+    --style-spacing-2: 0.75em;
+    --style-spacing-3: 1em;
+    --style-spacing-4: 1.25em;
+    --style-spacing-5: 1.5em;
+    --style-neumorphic-raised-box:
+        0 0.1em 0.1em rgba(0,0,0,0.4),
+        0 -0.1em 0.1em rgba(255,255,255,0.4);
+
+    --style-neumorphic-raised-box-shifted:
+        0 0.2em 0.2em rgba(0,0,0,0.4),
+        0 -0.2em 0.2em rgba(255,255,255,0.4);
+
+    --style-neumorphic-lowered-box:
+        0 0.1em 0.1em rgba(0,0,0,0.4) inset,
+		0 -0.1em 0.1em rgba(255,255,255,0.4) inset;
+
+    --style-neumorphic-lowered-box-shifted:
+        0 0.2em 0.2em rgba(0,0,0,0.4) inset,
+		0 -0.2em 0.2em rgba(255,255,255,0.4) inset;
+
+    --color-accent-gradient-primary: 
+        linear-gradient(
+            to right,
+            var(--color-primary-500), 
+            var(--color-primary-400)
+        );
+
+    --color-text-primary: var(--color-primary-400);
+    --color-text-secondary: var(--color-surface-400);
+
+    --color-surface-100: #CFE2F5;
+    --color-surface-200: #A2C5EC;
+    --color-surface-300: #6992C6;
+    --color-surface-400: #3B5C8E;
+    --color-surface-500: #0F2244;
+    --color-surface-600: #0A1A3A;
+    --color-surface-700: #071330;
+    --color-surface-800: #040D27;
+    --color-surface-900: #020920;
+
+    --color-primary-100: #FFE5CC;
+    --color-primary-200: #FFC39A;
+    --color-primary-300: #FF9A67;
+    --color-primary-400: #FF7241;
+    --color-primary-500: #FF3103;
+    --color-primary-600: #DB1902;
+    --color-primary-700: #B70701;
+    --color-primary-800: #930007;
+    --color-primary-900: #7A000F;
+
+    --color-success-100: #D0FCD4;
+    --color-success-200: #A2FAB4;
+    --color-success-300: #72F098;
+    --color-success-400: #4DE188;
+    --color-success-500: #1ACE74;
+    --color-success-600: #13B171;
+    --color-success-700: #0D946B;
+    --color-success-800: #087761;
+    --color-success-900: #046259;
+
+    --color-info-100: #CBFEFA;
+    --color-info-200: #98FDFD;
+    --color-info-300: #64F0FB;
+    --color-info-400: #3EDDF8;
+    --color-info-500: #00BFF4;
+    --color-info-600: #0094D1;
+    --color-info-700: #006FAF;
+    --color-info-800: #004F8D;
+    --color-info-900: #003975;
+
+    --color-warning-100: #FEFDD0;
+    --color-warning-200: #FDFAA2;
+    --color-warning-300: #FBF573;
+    --color-warning-400: #F7EF50;
+    --color-warning-500: #F7EF50;
+    --color-warning-600: #D0C511;
+    --color-warning-700: #AEA40C;
+    --color-warning-800: #8C8307;
+    --color-warning-900: #746C04;
+
+    --color-danger-100: #FFEAD2;
+    --color-danger-200: #FFD0A6;
+    --color-danger-300: #FFAF79;
+    --color-danger-400: #FF9058;
+    --color-danger-500: #FF5C21;
+    --color-danger-600: #DB3E18;
+    --color-danger-700: #B72510;
+    --color-danger-800: #93120A;
+    --color-danger-900: #7A0607;
+}
+
+body {
+    background-color: var(--color-surface-600);
+    color: var(--color-text-primary);
+    height: 100vh;
+    width: 100vw;
+}
+
+.card {
+    background-color: var(--color-surface-500);
+    border: none;
+    border-radius: var(--style-spacing-2);
+    color: var(--color-text-primary);
+    box-shadow: var(--style-neumorphic-raised-box);
+    margin-bottom: var(--style-spacing-5);
+    padding: var(--style-spacing-2);
+}
+.input {
+    background-color: var(--color-surface-500);
+    border: none;
+    border-radius: var(--style-spacing-2);
+    color: var(--color-text-primary);
+    box-shadow: var(--style-neumorphic-lowered-box);
+    margin-bottom: var(--style-spacing-5);
+    padding: var(--style-spacing-2);
+}
+
+.button {
+    background-color: var(--color-surface-500);
+    border: none;
+    border-radius: var(--style-spacing-2);
+    color: var(--color-text-primary);
+    box-shadow: var(--style-neumorphic-raised-box);
+    margin-bottom: var(--style-spacing-5);
+    padding: var(--style-spacing-2);
+}
+
+.raised-accent-primary {
+    background-image: var(--color-accent-gradient-primary);
+    color: white;
+    transition: ease;
+}
+
+.raised-accent-primary:hover {
+    background-image: var(--color-accent-gradient-primary);
+    box-shadow: var(--style-neumorphic-raised-box-shifted);
+}
+
+.lowered-accent-primary {
+    background-image: var(--color-accent-gradient-primary);
+    color: white;
+    transition: ease;
+}
+
+.lowered-accent-primary:hover {
+    background-image: var(--color-accent-gradient-primary);
+    box-shadow: var(--style-neumorphic-lowered-box-shifted);
+}
