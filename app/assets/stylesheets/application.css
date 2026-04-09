@@ -105,8 +105,6 @@
 body {
     background-color: var(--color-surface-600);
     color: var(--color-text-primary);
-    height: 100vh;
-    width: 100vw;
 }
 
 .card {
@@ -158,4 +156,23 @@ body {
 .lowered-accent-primary:hover {
     background-image: var(--color-accent-gradient-primary);
     box-shadow: var(--style-neumorphic-lowered-box-shifted);
+}
+
+.dot {
+    display: inline-block;
+    width: var(--style-spacing-2);
+    height: var(--style-spacing-2);
+    border-radius: 50%;
+}
+
+.status-fail {
+    background-color: var(--color-danger-700);
+}
+
+.status-success {
+    background-color: var(--color-success-700);
+}
+
+.v-container {
+    display: flex;
 }

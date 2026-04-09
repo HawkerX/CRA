@@ -1,2 +1,12 @@
 
+<div>
 <h1>Home</h1>
+<h2>
+    Backend:
+    <% if @data == {} %>
+        <span class="dot status-fail"></span>
+    <% else %>
+        <span class="dot status-success"></span>
+    <% end %>
+</h2>
+</div>
