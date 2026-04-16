@@ -31,7 +31,7 @@
     <div class="v-container">
         <div id="sidenav" class="card" style="margin: 0 1em 0 0;">
             <div class="button raised-accent-primary">
-                <%= link_to "Logout", login_path, style: "text-decoration: none; color: white;"%>
+                <%= link_to "Logout", '/auth/logout', data: { turbo: false }, style: "text-decoration: none; color: white;" %>
             </div>
         </div>
         <div id="content" class="card" style="flex: 5 1; margin: 0 0 0 0">

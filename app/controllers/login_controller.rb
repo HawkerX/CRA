@@ -2,6 +2,9 @@
 class LoginController < ApplicationController
     def index
         #@see views/login/index.html.erb
+        if session[:user_id]
+            redirect_to home_path
+        end
     end
 
     def create

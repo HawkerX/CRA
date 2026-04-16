@@ -1,6 +1,6 @@
 
 class ApiClient
-    BACKEND_URL = Rails.application.credentials.backend_url
+    BACKEND_URL = ENV['BACKEND_URL'] || Rails.application.credentials.backend_url
     include HTTParty
 
     ### GET ENDPOINTS ###
