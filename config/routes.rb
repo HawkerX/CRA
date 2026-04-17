@@ -18,4 +18,21 @@ Rails.application.routes.draw do
   delete "/logout", to:"login#destroy"
 
   get "/home", to:"home#index"
+
+  get "/events", to:"events#index"
+  post "/events", to:"events#create"
+  delete "/events", to:"events#destroy"
+
+  get "/courses", to:"courses#index"
+  post "/courses", to:"courses#create"
+  delete "/courses", to:"courses#destroy"
+
+  get "/resources", to:"resources#index"
+  post "/resources", to:"resources#create"
+  delete "/resources", to:"resources#destroy"
+
+  get "/reviews", to:"reviews#index"
+  post "/reviews", to:"reviews#create"
+  delete "/reviews", to:"reviews#destroy"
+
 end
