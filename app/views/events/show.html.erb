@@ -1,0 +1,58 @@
+
+<div>
+<%= form_with url: event_path, method: :patch do |form| %>
+
+    <%= form.hidden_field :id, name: "data[id]", value: @event["data"][0]["id"] %>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap 16px;">
+        <%= form.label :title %>
+        <%= form.text_field :title , 
+            name: "data[title]", 
+            value: @event["data"][0]["title"], 
+            class: "input" 
+        %>
+
+        <%= form.label :description %>
+        <%= form.text_field :description , 
+            name: "data[description]", 
+            value: @event["data"][0]["description"], 
+            class: "input" 
+        %>
+
+        <%= form.label :location %>
+        <%= form.text_field :location , 
+            name: "data[location]", 
+            value: @event["data"][0]["location"], 
+            class: "input" 
+        %>
+
+        <%= form.label :organizer %>
+        <%= form.text_field :organizer , 
+            name: "data[organizer]", 
+            value: @event["data"][0]["organizer"], 
+            class: "input" 
+        %>
+
+        <%= form.label :date %>
+        <%= form.text_field :date, 
+            name: "data[date]", 
+            value: @event["data"][0]["date"], 
+            class: "input" 
+        %>
+
+        <%= form.label :latitude %>
+        <%= form.text_field :latitude, 
+            name: "data[latitude]", 
+            value: @event["data"][0]["latitude"], 
+            class: "input" 
+        %>
+
+        <%= form.label :longitude %>
+        <%= form.text_field :longitude, 
+            name: "data[longitude]", 
+            value: @event["data"][0]["longitude"], 
+            class: "input" 
+        %>
+    </div>
+    <%= submit_tag "Update", class: "button raised-accent-primary" %>
+<% end %>
