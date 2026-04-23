@@ -13,11 +13,14 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "login#index"
 
-  get "/login", to:"login#index"
-  post "/login", to:"login#create"
-  delete "/logout", to:"login#destroy"
+  resources :login, only: [:index, :create, :destroy]
 
-  get "/home", to:"home#index"
+  resources :home, only: [:index]
+
+  resources :events
+  resources :courses
+  resources :resources
+  resources :reviews
 
   get '/auth/auth0/callback', to: 'auth0#callback'
 

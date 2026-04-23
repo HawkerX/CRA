@@ -31,7 +31,22 @@
     <div class="v-container">
         <div id="sidenav" class="card" style="margin: 0 1em 0 0;">
             <div class="button raised-accent-primary">
-                <%= link_to "Logout", '/auth/logout', data: { turbo: false }, style: "text-decoration: none; color: white;" %>
+                <%= link_to "Home", home_index_path, style: "text-decoration: none; color: white;"%>
+            </div>
+            <div class="button raised-accent-primary">
+                <%= link_to "Courses", courses_path, style: "text-decoration: none; color: white;"%>
+            </div>
+            <div class="button raised-accent-primary">
+                <%= link_to "Events", events_path, style: "text-decoration: none; color: white;"%>
+            </div>
+            <div class="button raised-accent-primary">
+                <%= link_to "Reviews", reviews_path, style: "text-decoration: none; color: white;"%>
+            </div>
+            <div class="button raised-accent-primary">
+                <%= link_to "Resources", resources_path, style: "text-decoration: none; color: white;"%>
+            </div>
+            <div class="button raised-accent-primary">
+                <%= link_to "Logout", login_index_path, style: "text-decoration: none; color: white;"%>
             </div>
         </div>
         <div id="content" class="card" style="flex: 5 1; margin: 0 0 0 0">
