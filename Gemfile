@@ -66,3 +66,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Auth0 provider for OmniAuth 
+gem "omniauth-auth0", "~> 3.0"
+# Required to prevent CSRF token errors during the login redirect
+gem "omniauth-rails_csrf_protection"
+gem "dotenv-rails", groups: [:development, :test]

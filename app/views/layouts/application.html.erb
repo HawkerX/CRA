@@ -24,6 +24,28 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div style="color: green; padding: 10px; border: 1px solid green; margin-bottom: 10px;">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div style="color: red; padding: 10px; border: 1px solid red; margin-bottom: 10px;">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <header style="padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid #ccc;">
+      <% if session[:user_id] %>
+        <span>Welcome, Admin (<%= session[:user_email] %>)!</span>
+        <%#= button_to "Logout", '/auth/logout', method: :get, form: { data: { turbo: false } } %>
+        
+        <%= link_to "Logout", '/auth/logout', data: { turbo: false } %>
+      <% else %>
+        <%= button_to "Login with Auth0", '/auth/auth0', method: :post, data: { turbo: false } %>
+      <% end %>
+    </header>
+
     <%= yield %>
   </body>
 </html>
