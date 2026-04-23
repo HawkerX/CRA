@@ -20,9 +20,27 @@ class ApiClient
         HTTParty.get("#{BACKEND_URL}/dynamic?table=class")
     end
 
+    ### Dynamic Route
+
+    def self.getEvent(id)
+        HTTParty.get("#{BACKEND_URL}/dynamic?table=event&id=#{id}")
+    end
+
+    def self.getResource(id)
+        HTTParty.get("#{BACKEND_URL}/dynamic?table=resource&id=#{id}")
+    end
+
+    def self.getClass(id)
+        HTTParty.get("#{BACKEND_URL}/dynamic?table=class&id=#{id}")
+    end
+
     ### POST ENDPOINTS ###
-    def self.postEvent(id, data)
-        HTTParty.post("#{BACKEND_URL}/dynamic?table=event&id=#{id}", body: data)
+    def self.postEvent(data)
+        HTTParty.patch(
+            "#{BACKEND_URL}/dynamic?table=event&id=#{data[:id]}", 
+            headers: {"Content-Type" => "application/json"}, 
+            body: data.to_json
+        )
     end
 
     def self.postResource(id, data)

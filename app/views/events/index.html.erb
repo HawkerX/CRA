@@ -9,4 +9,15 @@
         <span class="dot status-success"></span>
     <% end %>
 </h2>
+<% @data["data"].each do |event| %>
+    <div class="card" style="display: flex; justify-content: space-between">
+        <div>
+            <h3><%= event["title"] %></h3>
+            <%= event["date"] %>
+        </div>
+        <div class="button raised-accent-primary">
+            <%= link_to "View", event_path(event["id"]), style: "text-decoration: none; color: white;"%>
+        </div>
+    </div>
+<% end %>
 </div>

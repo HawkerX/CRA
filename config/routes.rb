@@ -13,26 +13,14 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "login#index"
 
-  get "/login", to:"login#index"
-  post "/login", to:"login#create"
-  delete "/logout", to:"login#destroy"
+  resources :login, only: [:index, :create, :destroy]
 
-  get "/home", to:"home#index"
+  resources :home, only: [:index]
 
-  get "/events", to:"events#index"
-  post "/events", to:"events#create"
-  delete "/events", to:"events#destroy"
+  resources :events
+  resources :courses
+  resources :resources
+  resources :reviews
 
-  get "/courses", to:"courses#index"
-  post "/courses", to:"courses#create"
-  delete "/courses", to:"courses#destroy"
-
-  get "/resources", to:"resources#index"
-  post "/resources", to:"resources#create"
-  delete "/resources", to:"resources#destroy"
-
-  get "/reviews", to:"reviews#index"
-  post "/reviews", to:"reviews#create"
-  delete "/reviews", to:"reviews#destroy"
 
 end
